@@ -1,10 +1,12 @@
-// src/components/Gallery.js
 import React, { useEffect, useState } from 'react';
 import axios from 'axios';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { useNavigate } from "react-router-dom";
+import './Gallery.css';
 
 const Gallery = ({ user, logoutUser }) => {
   const [artworks, setArtworks] = useState([]);
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchArtworks = async () => {
@@ -22,23 +24,23 @@ const Gallery = ({ user, logoutUser }) => {
 
   const handleLogout = () => {
     logoutUser();
-    window.location.href = '/login';
+    navigate("/login");
   };
 
   return (
     <div className="container">
-      <header className="d-flex justify-content-between align-items-center">
+      <header className="d-flex justify-content-between align-items-center my-4">
         <h2>Art Gallery</h2>
-        <div className="my-4">
-          <a href="/upload" className="btn btn-primary">Upload Artwork</a>
-          <button className="btn btn-secondary me-2" onClick={handleLogout}>Logout</button>
+        <div>
+          <a href="/upload" className="btn btn-primary me-2">Upload Artwork</a>
+          <button className="btn btn-secondary" onClick={handleLogout}>Logout</button>
         </div>
       </header>
       <div className="row">
         {artworks.map((artwork) => (
           <div key={artwork.ArtworkId} className="col-md-4 mb-3">
             <div className="card">
-              <img src={artwork.ImageUrl} alt={artwork.Title} className="card-img-top" />
+              <img src={artwork.ImageUrl} alt={artwork.Title} className="card-img-top artwork-img" />
               <div className="card-body">
                 <h5 className="card-title">{artwork.Title}</h5>
                 <p className="card-text">{artwork.Description}</p>
