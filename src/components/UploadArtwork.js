@@ -27,6 +27,7 @@ const UploadArtwork = () => {
       navigate("/gallery");
     } catch (error) {
       console.error(error);
+      
       alert('Upload failed!');
     }
   };
