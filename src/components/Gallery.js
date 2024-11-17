@@ -11,7 +11,7 @@ const Gallery = ({ user, logoutUser }) => {
   useEffect(() => {
     const fetchArtworks = async () => {
       try {
-        const response = await axios.get('https://7r3rtiffni.execute-api.us-east-1.amazonaws.com/prod/viewArtwork');
+        const response = await axios.get('https://us-central1-cloud-429015.cloudfunctions.net/viewArtwork');
         setArtworks(response.data);
       } catch (error) {
         console.error('Failed to load artworks:', error);

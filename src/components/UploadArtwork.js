@@ -13,7 +13,7 @@ const UploadArtwork = () => {
   const handleUpload = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('https://7r3rtiffni.execute-api.us-east-1.amazonaws.com/prod/uploadArtwork', {
+      const response = await axios.post('https://us-central1-cloud-429015.cloudfunctions.net/uploadArtwork', {
         title,
         description,
         artist,

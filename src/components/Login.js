@@ -11,7 +11,7 @@ const Login = ({ loginUser }) => {
   const handleLogin = async (e) => {
     e.preventDefault();
     try {
-      await axios.post('https://7r3rtiffni.execute-api.us-east-1.amazonaws.com/prod/loginUser', {
+      await axios.post('https://us-central1-cloud-429015.cloudfunctions.net/loginUser', {
         username,
         password,
       });
