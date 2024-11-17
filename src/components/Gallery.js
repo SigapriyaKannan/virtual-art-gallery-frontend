@@ -38,13 +38,13 @@ const Gallery = ({ user, logoutUser }) => {
       </header>
       <div className="row">
         {artworks.map((artwork) => (
-          <div key={artwork.ArtworkId} className="col-md-4 mb-3">
+          <div key={artwork.id} className="col-md-4 mb-3">
             <div className="card">
-              <img src={artwork.ImageUrl} alt={artwork.Title} className="card-img-top artwork-img" />
+              <img src={artwork.imageUrl} alt={artwork.title} className="card-img-top artwork-img" />
               <div className="card-body">
-                <h5 className="card-title">{artwork.Title}</h5>
-                <p className="card-text">{artwork.Description}</p>
-                <p className="card-text"><strong>Artist:</strong> {artwork.Artist}</p>
+                <h5 className="card-title">{artwork.title}</h5>
+                <p className="card-text">{artwork.description}</p>
+                <p className="card-text"><strong>Artist:</strong> {artwork.artist}</p>
               </div>
             </div>
           </div>
